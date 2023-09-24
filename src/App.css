@@ -211,10 +211,6 @@ input:focus {
     height: 100%;
   }
 
-  .form-container .header {
-    margin-bottom: 2rem;
-  }
-
   .input-fields-container {
     max-width: 100%;
   }
