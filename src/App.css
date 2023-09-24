@@ -206,9 +206,9 @@ input:focus {
 @media screen and (max-width:500px) {
 
   .form-container {
-    padding: 3rem;
     box-shadow: none;
     width: 80%;
+    height: 100%;
   }
 
   .form-container .header {
@@ -217,5 +217,13 @@ input:focus {
 
   .input-fields-container {
     max-width: 100%;
+  }
+
+  .image img {
+    width: 200px;
+  }
+
+  .submit-container {
+    box-shadow: none;
   }
 }
