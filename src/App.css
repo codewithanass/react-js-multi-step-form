@@ -187,7 +187,8 @@ input:focus {
 .errorMessage {
   font-size: 0.9rem;
   color: red;
-  margin: -8px 0 0 10px;
+  margin-top: -8px;
+  margin-left: 10px;
 }
 
 
