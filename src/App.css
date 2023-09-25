@@ -12,6 +12,7 @@ body {
   margin: 0%;
   padding: 0%;
   font-family: 'Montserrat', arial, verdana;
+  overflow: hidden;
 }
 
 .form {
@@ -171,12 +172,22 @@ input:focus {
   position: relative;
 }
 
+.confirmPass-field {
+  margin-top: 10px;
+}
+
 .icon {
   position: absolute;
   top: 20px;
   right: 22px;
   font-size: 2rem;
   color: #666;
+}
+
+.errorMessage {
+  font-size: 0.9rem;
+  color: red;
+  margin: -8px 0 0 10px;
 }
 
 
@@ -217,9 +228,11 @@ input:focus {
 
   .image img {
     width: 200px;
+    margin-bottom: 10px;
   }
 
   .submit-container {
     box-shadow: none;
   }
+
 }

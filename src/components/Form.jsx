@@ -20,6 +20,7 @@ const Form = () => {
     const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(true)
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
     const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+    const [passwordError, setPasswordError] = useState('')
 
 
     const FormTitles = ["SignUp", "Personal Info", "Other"];
@@ -31,6 +32,7 @@ const Form = () => {
                 formData={formData} 
                 setFormData={setFormData} 
                 validateForm={validateForm} 
+                passwordError={passwordError}
             />
         } else if (page == 1) {
             return <PersonalInfo 
@@ -46,8 +48,10 @@ const Form = () => {
     const validateForm = () => {
         const isEmailValid =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
         const isPasswordMatch = formData.password === formData.confirmPassword;
+        const passwordErrorMessage = isPasswordMatch ? '' : 'Passwords do not match';
     
         setIsNextButtonDisabled( !isEmailValid || !isPasswordMatch)
+        setPasswordError(passwordErrorMessage)
     }
 
     const updateButtonDisabledState = () => {

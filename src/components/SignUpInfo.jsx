@@ -1,8 +1,9 @@
 import {useEffect, useState} from 'react'
 import {BiHide, BiShowAlt} from 'react-icons/bi'
 import ContactImg from '../assets/contact.png'
+import PasswordStrengthBar from 'react-password-strength-bar'
 
-const SignUpInfo = ({formData, setFormData, validateForm}) => {
+const SignUpInfo = ({formData, setFormData, validateForm, passwordError}) => {
   const [password, setPassword] = useState(formData.password);
   const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState(formData.confirmPassword);
@@ -66,6 +67,7 @@ const SignUpInfo = ({formData, setFormData, validateForm}) => {
           <BiHide className='icon' onClick={togglePasswordVisibility}/> : 
           <BiShowAlt className='icon' onClick={togglePasswordVisibility} /> 
         }
+        <PasswordStrengthBar password={password} scoreWords={['short', 'weak', 'okay', 'good', 'strong']} />
       </div>
       
       <div className="confirmPass-field">
@@ -80,6 +82,7 @@ const SignUpInfo = ({formData, setFormData, validateForm}) => {
           <BiHide className='icon' onClick={toggleConfirmPassVisibility}/> : 
           <BiShowAlt className='icon' onClick={toggleConfirmPassVisibility} /> 
         }
+        {passwordError && <div className='errorMessage'>{passwordError}</div>}
       </div>
       </div>
     </div>
